@@ -14,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
     EditText et2;
     TextView tv;
 
-    int val1,val2;
+    int val1, val2;
 
-    Button bt1,bt2,bt3,bt4;
+    Button bt1, bt2, bt3, bt4;
 
 
     @Override
@@ -33,6 +33,24 @@ public class MainActivity extends AppCompatActivity {
         bt3 = findViewById(R.id.button7);
         bt4 = findViewById(R.id.button8);
         addFunction();
+        subFunction();
+        mulFunction();
+        divFunction();
+
+        bt2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                et1.setText("2");
+                et2.setText("1");
+                //tv.setText("Hello");
+
+                val1 = Integer.parseInt(et1.getText().toString());
+                val2 = Integer.parseInt(et2.getText().toString());
+                tv.setText("" + (val1 - val2));
+            }
+        });
+
     }
 
     private void addFunction() {
@@ -41,22 +59,36 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 val1 = Integer.parseInt(et1.getText().toString());
                 val2 = Integer.parseInt(et2.getText().toString());
-                tv.setText("Result is : "+(val1+val2));
+                tv.setText("Result is : " + (val1 + val2));
             }
         });
     }
 
     private void subFunction() {
 
+        bt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                val1 = Integer.parseInt(et1.getText().toString());
+                val2 = Integer.parseInt(et2.getText().toString());
+                tv.setText("Result is : " + (val1 - val2));
+            }
+        });
     }
 
     private void mulFunction() {
 
+
     }
 
     private void divFunction() {
-
+        bt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                val1 = Integer.parseInt(et1.getText().toString());
+                val2 = Integer.parseInt(et2.getText().toString());
+                tv.setText("Result is : " + (val1/val2));
+            }
+        });
     }
-
-
 }

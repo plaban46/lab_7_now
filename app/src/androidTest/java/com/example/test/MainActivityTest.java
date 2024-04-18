@@ -1,5 +1,7 @@
 package com.example.test;
 
+import android.content.Intent;
+
 import androidx.test.espresso.Espresso;
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.espresso.assertion.ViewAssertions;
@@ -15,7 +17,21 @@ public class MainActivityTest {
     public ActivityScenarioRule<MainActivity> activityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
 
- 
+
+
+    @Test
+    public void testButtonClick_black() {
+        // Click the button
+        Espresso.onView(ViewMatchers.withId(R.id.button6))
+                .perform(ViewActions.click());
+
+
+        // Check if the text view displays "Red!"
+        Espresso.onView(ViewMatchers.withId(R.id.textView2))
+                .check(ViewAssertions.matches(ViewMatchers.withText("1")));
+    }
 
 
 }
+
+
