@@ -31,6 +31,16 @@ public class MainActivityTest {
         // Check if the text view displays "Red!"
         Espresso.onView(withId(R.id.textView2)).check(ViewAssertions.matches(withText("6")));
 }
+    @Test
+    public void testSubtraction() {
+        // Click the button
+        Espresso.onView(withId(R.id.button6))
+                .perform(ViewActions.click());
+
+
+        // Check if the text view displays "Red!"
+        Espresso.onView(withId(R.id.textView2)).check(ViewAssertions.matches(withText("1")));
+    }
 
 
 }

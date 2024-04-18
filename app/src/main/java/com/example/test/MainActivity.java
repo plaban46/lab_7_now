@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         bt4 = findViewById(R.id.button8);
         addFunction();
         mulFunction();
+        subFunction();
     }
 
     private void addFunction() {
@@ -53,6 +54,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void subFunction() {
+
+        bt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                et1.setText("2");
+                et2.setText("1");
+                //tv.setText("Hello");
+
+                val1 = Integer.parseInt(et1.getText().toString());
+                val2 = Integer.parseInt(et2.getText().toString());
+                tv.setText(""+(val1-val2));
+            }
+        });
 
     }
 
