@@ -33,17 +33,23 @@ public class MainActivity extends AppCompatActivity {
         bt3 = findViewById(R.id.button7);
         bt4 = findViewById(R.id.button8);
         addFunction();
+        mulFunction();
     }
 
     private void addFunction() {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                et1.setText("1");
+                et2.setText("2");
+                //tv.setText("Hello");
+
                 val1 = Integer.parseInt(et1.getText().toString());
                 val2 = Integer.parseInt(et2.getText().toString());
-                tv.setText("Result is : "+(val1+val2));
+                tv.setText(""+(val1+val2));
             }
         });
+
     }
 
     private void subFunction() {
@@ -51,6 +57,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void mulFunction() {
+        bt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                et1.setText("3");
+                et2.setText("2");
+                //tv.setText("Hello");
+
+                val1 = Integer.parseInt(et1.getText().toString());
+                val2 = Integer.parseInt(et2.getText().toString());
+                tv.setText(""+(val1*val2));
+            }
+
+    });
 
     }
 
